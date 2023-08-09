@@ -10,6 +10,14 @@ class GalleriaHomepage extends StatefulWidget {
 class _GalleriaHomepageState extends State<GalleriaHomepage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+        body: SafeArea(
+            child: Column(
+      children: [
+        Center(
+          child: Container(),
+        )
+      ],
+    )));
   }
 }
