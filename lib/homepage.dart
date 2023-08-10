@@ -13,10 +13,22 @@ class _GalleriaHomepageState extends State<GalleriaHomepage> {
     return Scaffold(
         body: SafeArea(
             child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Center(
-          child: Container(),
-        )
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Container(
+                  width: 300,
+                  height: 500,
+                  decoration: const BoxDecoration(color: Colors.black),
+                )),
+          ],
+        ),
+        Text("ART NAME"),
+        Text("ART DETAILS"),
       ],
     )));
   }
