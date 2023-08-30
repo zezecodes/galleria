@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:galleria/art_page.dart';
 
 class GalleriaHomepage extends StatefulWidget {
   const GalleriaHomepage({super.key});
@@ -8,28 +9,18 @@ class GalleriaHomepage extends StatefulWidget {
 }
 
 class _GalleriaHomepageState extends State<GalleriaHomepage> {
+  final pageController = PageController(initialPage: 1);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Container(
-                  width: 300,
-                  height: 500,
-                  decoration: const BoxDecoration(color: Colors.black),
-                )),
-          ],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 40),
+          child: PageView(
+              controller: pageController,
+              children: const [ArtPage(), ArtPage(), ArtPage()]),
         ),
-        Text("ART NAME"),
-        Text("ART DETAILS"),
-      ],
-    )));
+      ),
+    );
   }
 }
