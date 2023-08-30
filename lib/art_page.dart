@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ArtPage extends StatefulWidget {
@@ -8,6 +9,7 @@ class ArtPage extends StatefulWidget {
 }
 
 class _ArtPageState extends State<ArtPage> {
+  bool click = true;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,12 +28,43 @@ class _ArtPageState extends State<ArtPage> {
         const SizedBox(
           height: 20,
         ),
-        const Text("The Starry Night",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'Satoshi', fontSize: 30)),
-        const Text("Painting by Vincent Van Gogh",
-            textAlign: TextAlign.center,
-            style: TextStyle(fontFamily: 'Satoshi', fontSize: 20)),
+        Padding(
+          padding: const EdgeInsets.only(left: 50),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text("The Starry Night",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontFamily: 'Satoshi', fontSize: 30)),
+                  Text("Painting by Vincent Van Gogh",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontFamily: 'Satoshi', fontSize: 20)),
+                ],
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      click = !click;
+                    });
+                  },
+                  icon: Icon((click == false)
+                      ? CupertinoIcons.heart
+                      : (CupertinoIcons.heart_fill)),
+                  iconSize: 35,
+                  // color: Colors.red,
+                ),
+              ),
+            ],
+          ),
+        ),
+        // const Text("Painting by Vincent Van Gogh",
+        //     textAlign: TextAlign.center,
+        //     style: TextStyle(fontFamily: 'Satoshi', fontSize: 20)),
         const Padding(
           padding: EdgeInsets.all(8.0),
           child: Text(

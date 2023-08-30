@@ -17,7 +17,12 @@ class _GalleriaHomepageState extends State<GalleriaHomepage> {
       bottomNavigationBar: BottomNavigationBar(items: const [
         BottomNavigationBarItem(icon: Icon(CupertinoIcons.home), label: 'Home'),
         BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.heart_fill), label: 'Favourites'),
+            icon: Icon(CupertinoIcons.heart_fill),
+            label: 'Favourites',
+            activeIcon: Icon(
+              CupertinoIcons.heart_fill,
+              color: Colors.red,
+            )),
         BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.profile_circled), label: 'Profile')
       ]),
